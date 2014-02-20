@@ -1,0 +1,3 @@
+var list_of_council_members = 'Maria del Carmen ArroyoInez BarronFernando CabreraMargaret ChinAndrew CohenRobert CornegyCosta ConstantinidesElizabeth CrowleyLaurie CumboChaim M. DeutschInez E. DickensDaniel DrommRafael EspinalMathieu EugeneJulissa FerrerasDaniel R. GarodnickVincent GentileVanessa L GibsonDavid G. GreenfieldVincent IgnizioCorey JohnsonAndy KingBen KallosPeter KooKaren KoslowitzRory LancmanBrad LanderStephen LevinMark LevineAlan MaiselMelissa Mark-ViveritoSteven MatteoDarlene MealyCarlos MenchacaRosie MendezI. Daneek MillerAnnabel PalmaAntonio ReynosoDonovan RichardsYdanis RodriguezDeborah RoseHelen RosenthalRitchie TorresMark TreygerEric UlrichJames VaccaPaul ValloneJimmy Van BramerMark WeprinJumaane D. WilliamsRuben Wills'
+
+for (var i=0 ; i< )
