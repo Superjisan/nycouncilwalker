@@ -35,24 +35,25 @@ var pageHtml = request({uri: baseUrl}, function(err, response, body) {
     // let's stop the engine here and
     debugger;
 
+    var council_members_raw_data = $(".list_entry").text()
+    console.log(council_members_raw_data)
 
-
-    var Bronx_cm = $("#Bronx:nth-child(2)").text();
-    var Bronx_cm_split = Bronx_cm.split(' ');
-    var Bronx_val =[];
-
-
-    for (var i = 0; i < Bronx_cm_split.length; i++){
-      // console.log(Bronx_cm_split[i])
-      if (Bronx_cm_split[i] !== '') {
-        Bronx_val.push(Bronx_cm_split[i])
-      }
+    var council_member = {
+      name : "",
+      district : 0,
+      borough : 0,
+      party : "Independent"
     }
 
-
-    console.log(Bronx_val);
-    // console.log(Bronx_cm_split)
-
+    var cm_array = council_members_raw_data.split("Democrat" || "Republican")
+    cm_array.map(function(elem){
+      if (elem.indexOf("Republican") > -1 ) {
+        console.log("found a republican", elem)
+        elem.split("Republican")
+        }
+      }
+    )
+    console.log(cm_array )
 });
 
 
