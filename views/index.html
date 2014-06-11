@@ -6,5 +6,7 @@
 {% endblock %}
 
 {% block bottomscripts  %}
-
+<script>
+  window.councilmembers = {{council_members |json | safe}}
+ </script>
 {% endblock %}
