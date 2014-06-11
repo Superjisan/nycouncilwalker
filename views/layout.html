@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>{% block title%}NYC Council Walker{% endblock%}</title>
-
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.0/lum/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link href="/stylesheets/bootstrap_overrides.css" rel="stylesheet"> -->
-    <link href="/stylesheets/style.css" rel="stylesheet">
-
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC2ZiQbJ_sKaL80Iq6JU4WD4SVlFBsJ5c&sensor=true">
-    </script>
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
+{% include './includes/head.html' %}
 <body>
 
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -53,21 +27,8 @@
     {% block content %}{% endblock %}
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-  <script src='/javascripts/index.js'></script>
-  <script>
-  // to make active classes
-     $('.navbar li').click(function(e) {
-        $('.navbar li.active').removeClass('active');
-        var $this = $(this);
-        if (!$this.hasClass('active')) {
-            $this.addClass('active');
-        }
-        e.preventDefault();
-    });
-  </script>
+{% include './includes/foot.html' %}
+
   {% block bottomscripts %} {% endblock %}
 </body>
 </html>

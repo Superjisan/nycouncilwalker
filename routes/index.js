@@ -4,10 +4,11 @@ var CouncilMember = models.CouncilMember
 var async = require('async')
 
 exports.index = function(req, res) {
+  //getting them from the database
   CouncilMember.find({}, function(err, members){
     if (err) { res.render('error', {status : 500})
   } else {
-    console.log(members)
+    // console.log(members)
     res.render('index', {council_members: members})
     }
   })

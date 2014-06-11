@@ -1,0 +1,33 @@
+<!-- Bootstrap and JQuery -->
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Angular JS files -->
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src='/bower_components/angular-resource/angular-resource.js'></script>
+<script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+
+<!-- My Angular Init -->
+<script src="/js/ng-app.js"></script>
+<script src="/js/ng-init.js"></script>
+
+<!-- Angular Controllers -->
+<script src="/js/ng-controllers/members.js"></script>
+
+<!-- Angular Services -->
+<script src="/js/ng-services/global.js"></script>
+
+
+<!-- SCRIPTS -->
+<script>
+  // Navigation Bar toggle active classes
+     $('.navbar li').click(function(e) {
+        $('.navbar li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+        e.preventDefault();
+    });
+  </script>
