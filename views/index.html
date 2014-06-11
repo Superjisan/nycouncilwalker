@@ -2,8 +2,17 @@
 
 {% block content %}
 <br><br><br><br>
-<div class="panel panel-default">
+<div ng-controller="MembersController">
 
+<select ng-model = "search.borough">
+  <option value="Bronx">Bronx</option>
+  <option value="Brooklyn">Brooklyn</option>
+  <option value="Manhattan">Manhattan</option>
+  <option value="Queens">Queens</option>
+  <option value="Staten Island">Staten Island</option>
+</select>
+
+<div class="panel panel-default">
 
   <!-- Table -->
   <table class="table">
@@ -14,15 +23,16 @@
       <th> Party</th>
     </tr>
 
-    {% for i,name in council_members %}
-    <tr>
-      <td> {{council_members[i].name}}</td>
-      <td> {{council_members[i].district_number}}</td>
-      <td> {{council_members[i].borough}}</td>
-      <td> {{council_members[i].party}}</td>
+
+    <tr ng-repeat="member in members| filter: search" >
+      <td> [[member.name]]</td>
+      <td> [[member.district_number]]</td>
+      <td> [[member.borough]]</td>
+      <td> [[member.party]]</td>
     </tr>
-     {% endfor %}
+
   </table>
+</div>
 </div>
 
 {% endblock %}
@@ -30,6 +40,5 @@
 {% block bottomscripts  %}
 <script>
   window.councilmembers = {{council_members |json | safe}}
-  window.councilmembers.name= window.councilmembers.name.replace(/['"]+/g, '')
  </script>
 {% endblock %}
