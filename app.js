@@ -33,10 +33,16 @@ var pageHtml = request({uri: baseUrl}, function(err, response, body) {
 
     var $ = cheerio.load(body);
     // let's stop the engine here and
-    debugger;
+    // debugger;
 
     var council_members_raw_data = $(".list_entry").text()
-    console.log(council_members_raw_data)
+    // var links = $("a").filter(function(i,link){
+    //   return $(link).attr('href').match(/d/)
+    // }).map(function(i, link){
+    //    var url  = $(link).attr('href').match(/d\(/\d+/$/)
+    //    return url
+    // })
+    // console.log( links)
 
     var council_member = {
       name : "",
@@ -48,7 +54,7 @@ var pageHtml = request({uri: baseUrl}, function(err, response, body) {
     var cm_array = council_members_raw_data.split("Democrat" || "Republican")
     cm_array.map(function(elem){
       if (elem.indexOf("Republican") > -1 ) {
-        console.log("found a republican", elem)
+        // console.log("found a republican", elem)
         elem.split("Republican")
         }
       }
