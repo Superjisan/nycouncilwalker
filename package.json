@@ -4,7 +4,7 @@
   "description": "will walk through the nyc council website and get all the council member info",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "main": "node app.js"
   },
   "keywords": [
     "nyc",
