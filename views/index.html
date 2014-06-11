@@ -1,12 +1,35 @@
 {% extends "layout.html"%}
 
 {% block content %}
+<br><br><br><br>
+<div class="panel panel-default">
 
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+      <th> Name</th>
+      <th> District</th>
+      <th> Borough</th>
+      <th> Party</th>
+    </tr>
+
+    {% for i,name in council_members %}
+    <tr>
+      <td> {{council_members[i].name}}</td>
+      <td> {{council_members[i].district_number}}</td>
+      <td> {{council_members[i].borough}}</td>
+      <td> {{council_members[i].party}}</td>
+    </tr>
+     {% endfor %}
+  </table>
+</div>
 
 {% endblock %}
 
 {% block bottomscripts  %}
 <script>
   window.councilmembers = {{council_members |json | safe}}
+  window.councilmembers.name= window.councilmembers.name.replace(/['"]+/g, '')
  </script>
 {% endblock %}
