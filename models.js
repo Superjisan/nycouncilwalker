@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/NYC_council');
+
 var Schema = mongoose.Schema;
 
 var CouncilMemberSchema = new Schema ({
@@ -12,4 +14,3 @@ var CouncilMember = mongoose.model('CouncilMember', CouncilMemberSchema)
 
 module.exports = {"CouncilMember": CouncilMember}
 
-//this is a comment to see if github commits work
