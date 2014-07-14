@@ -13,7 +13,7 @@ function scrapeCityCouncilURL(){
 
     var $ = cheerio.load(data);
 
-    var names = [], districts = [], boroughs = [], parties = [], urls = [];
+    var names = [], districts = [], boroughs = [], parties = [], urls = [], photo_url;
 
     function scrapeEntryData(column, arraytoPush){
       if(column === 'url'){
@@ -47,6 +47,9 @@ function scrapeCityCouncilURL(){
       citycouncilMembers.push(result)
     }
 
+    urls.forEach(function(elem){
+      var photo_url = scrapeCouncilMemberPage("http://council.nyc.gov"+elem)
+    })
     // console.log("names", names);
     // console.log("districts", districts);
     console.log("citycouncilMembers", citycouncilMembers);
@@ -64,7 +67,9 @@ function scrapeCouncilMemberPage(url){
     }
 
     var $ = cheerio.load(body);
-
+    photo_url = $(".inside_top_image img").attr().src
+    console.log("photo url", photo_url);
+    return photo_url
   })
 }
 
